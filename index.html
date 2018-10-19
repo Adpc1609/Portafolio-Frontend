@@ -9,6 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>portafolio</title>
@@ -32,7 +33,7 @@
                         <a class="nav-link" href="#Home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#tecnologias">Técnologias</a>
+                        <a class="nav-link" href="#tecnologias">Tecnologías</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#proyectos">Proyectos</a>
@@ -51,13 +52,8 @@
     <div class="container my-1" id="Home">
         <div class="row">
             <div class="col-md-6">
-                <div class="header-content-left">
-                    <img class="img-header" src="principal.png">
-                </div>
-            </div>
-            <div class="col-md-6">
                 <div class="header-content-rigth">
-                    <h1 class="display-4 text-center">ADRIANA PÉREZ</h1>
+                    <h1 class="display-4 text-center" id="mi-nombre">ADRIANA PÉREZ</h1>
                     <p class="h3 text-secondary text-center">Frontend Developer/Diseñadora Gráfica</p>
                     <ul class="list-inline text-center pt-4">
                         <li class="list-inline-item"><a href="https://github.com/Adpc1609"target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
@@ -66,16 +62,20 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="header-content-left">
+                    <img class="img-header" src="principal.png">
+                </div>
+            </div>
 
         </div>
     </div>
-    <hr>
     <!----------------------------tecnologias---------------------------->
     <section class="section-2" id="tecnologias">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-12 col-lg-12">
-                    <h1 class="display-5 text-center" id="titulo-tecnologia">Técnologias</h1>
+                    <h1 class="display-5 text-center" id="titulo-tecnologia">Tecnologías</h1>
                     <center>
                         <div class="tec table-hover" style="display:none"></div>
                         <div class="tec"><img src="img/html-5.svg" width="100" height="100"></div>
@@ -258,7 +258,7 @@
                 <div class="col-md-12">
                     <img class="mx-auto d-block mb-1" src="img/foto-sobremi-01.png" width="200" height="200">
                     <h1 class="text-center text-white ">Sobre mí</h1>
-                    <p class="parrafo text-center mt-4">Frontend Developer y Diseñador gráfico amante de la tecnologia,
+                    <p class="parrafo text-left mt-4">Frontend Developer y Diseñador gráfico amante de la tecnologia,
                         creativa siempre en busca
                         de la innovación con ganas de crecer, me gusta trabajar en equipo. Es por esto que he decidido
                         sumergirme
@@ -275,30 +275,32 @@
     </section>
     <!--------------------------------footer------------------>
     <footer id="contact">
-        <div class="container">
+        <div id="app"  class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form class="card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="form-group">
-                                <input type="text" placeholder="name" class="form-control">
+                                <input type="text" placeholder="Name" class="form-control"  v-model="from_name">
                             </div>
                             <div class="form-group">
-                                <input type="email" placeholder="email" class="form-control">
+                                <input type="email" placeholder="Email" class="form-control" v-model="from_email">
                             </div>
                             <div class="form-group">
-                                <textarea rows="10" cols="30" placeholder="Mensaje" class="form-control"></textarea>
+                                <textarea rows="10" cols="30" placeholder="Mensaje" class="form-control" v-model="message"></textarea>
                             </div>
-                            <button class="btn btn-dark btn-block" onclick="enviar()">Enviar</button>
+                            <button class="btn btn-dark btn-block" @click="enviar">Enviar</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="col-md-6" id="datosContacto">
                     <h1 class="display-5 text-center mt-4 text-white">Contáctame</h1>
-                    <div id="mapa">
+                    <div id="mapa" class="justify-content-center">
+                        <div class="text-left">
                         <p><i class="fas fa-map-marker-alt mr-3"></i>Santiago, Chile</p>
                         <p><i class="fas fa-mobile-alt mr-3"></i>+56946879129</p>
                         <p><i class="fas fa-envelope mr-3"></i>adpc1609@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -338,16 +340,15 @@
             });
         });
     </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
-    <script src="./app.js"></script>
-
+    <script src="app.js"></script>
 </body>
 
 </html>

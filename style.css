@@ -186,17 +186,22 @@ div#mapa{
   margin-top:70px;
 }
 .header-content-rigth{
-  margin-top:90px;
+  margin-top:200px;
 }
 #contact{
   padding-top: 2em;
 }
 #datosContacto{
   margin-top: 2em;
+  
+  
 }
 #titulo-proyectos{
   margin-bottom: 1em;
 }
 #titulo-tecnologia{
   margin-bottom: 2em;
+}
+#mi-nombre{
+font-family: 'Encode Sans', sans-serif;
 }

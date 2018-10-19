@@ -1,26 +1,27 @@
 (function(){
-    emailjs.init("<YOUR USER ID>");
+    emailjs.init("user_DDyOc62i22ZRGD7H8OSDq");
  })();
 const vue = new Vue({
     el: '#app',
     data(){
+        console.log("send data0");
         return {
             from_name: '',
             from_email: '',
-            message: '',
-            subject: '',
+            message: ''
         }
     },
     methods: {
         enviar(){
+            
             let data = {
                 from_name: this.from_name,
                 from_email: this.from_email,
                 message: this.message,
-                subject: this.subject,
+                from_subject:"La Persona" + this.from_name + "quiere comunicarse contigo"
             };
-            
-            emailjs.send("<YOUR SERVICE ID>","<YOUR TEMPLATE ID>", data)
+            console.log("send data", data);
+            emailjs.send("adpc1609@gmail.com","contactoportafolio", data)
             .then(function(response) {
                 if(response.text === 'OK'){
                     alert('El correo se ha enviado de forma exitosa');
