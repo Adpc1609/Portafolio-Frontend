@@ -205,3 +205,7 @@ div#mapa{
 #mi-nombre{
 font-family: 'Encode Sans', sans-serif;
 }
+
+footer.contact p {
+  text-align: center
+}
